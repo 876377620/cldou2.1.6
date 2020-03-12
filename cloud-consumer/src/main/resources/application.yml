@@ -1,0 +1,94 @@
+server:
+  port: 5083
+  tomcat:
+    uri-encoding: UTF-8
+
+  servlet:
+    context-path: /
+spring:
+  http:
+    encoding:
+      charset: utf-8
+
+      #location: /home/628/
+  application:
+    name: docmg-admin-consumer
+  resources:
+    static-locations: classpath:/resources/, classpath:/static/, classpath:/public/, file:${spring.http.multipart.location}
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 10000MB
+      max-request-size: 2048MB
+      file-size-threshold: 0
+      location: D:/file_save
+
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8761/eureka/
+
+
+#自定义配置
+#myConfig:
+#  session-invalidate-time: 1800 #shiro session失效时间 单位：秒
+#  session-validation-interval: 900 #多久检测一次失效的shiro session 单位：秒
+#  batchType: 1 #0:只入库信息   1:入库信息且复制文件
+#  importPath: e:/upload_file  #导入
+#  exportPath: e:/upload_file/export/	#导出
+#  pdfPath: e:/upload_file/pdfs/		#生成的pdf
+#  thumbnailPath: e:/upload_file/thumbnail/	#生成的缩略图
+#  core: docmag	#solr core
+#  riskStartDate: 24/00/00 #风险开始时间,(24计时:时/分/秒)
+#  riskEndDate: 6/00/00 #风险结束时间,(24计时:时/分/秒)
+my-config:
+  session-invalidate-time: 1800 #shiro session失效时间 单位：秒
+  session-validation-interval: 900 #多久检测一次失效的shiro session 单位：秒
+  batchType: 1 #0:只入库信息   1:入库信息且复制文件
+  #importPath: /home/628/  #导入
+  #exportPath: /home/628/export/	#导出
+  #pdfPath: /home/628/pdfs/		#生成的pdf
+  #thumbnailPath: /home/628/thumbnail/	#生成的缩略图
+  core: docmag	#solr core
+  riskStartDate: 24/00/00 #风险开始时间,(24计时:时/分/秒)
+  riskEndDate: 6/00/00 #风险结束时间,(24计时:时/分/秒)
+  ftpIp: 10.215.4.55
+  ftpPort: 21
+  ftpUsername: yanzi
+  ftpPassword: yanzi
+  ftpDisc: E:/
+  #系统管理员ID(与数据库user表里的系统管理员ID相对应)
+  sysadmin-id: 1110362883709411329
+  #安全保密管理员ID(与数据库user表里的安全保密管理员ID相对应)
+  secadmin-id: 1110363201545379841
+  #安全审计管理员ID(与数据库user表里的安全审计管理员ID相对应)
+  auditadmin-id: 1110364145540603905
+  #普通用户角色ID(与数据库role表里的普通用户ID相对应)
+  ordinaryrole-id: 1112995669674565634
+  #导入用户初始化密码
+  password: 123456
+  #file:
+  #  path: http://10.215.4.148:8081/file_server/conver/
+  #  newPath: D://logs/conver/
+  #  pdfPath: http://10.215.4.148:8081/file_server/conver/pdf/web/viewer.html
+  #file:
+  #  path: http://10.1.0.12:5083/docmg/
+  #  newPath: e:/upload_file/
+  #  pdfPath: http://10.1.0.12:5083/docmg/pdf/web/viewer.html
+
+  #file:
+  #path: http://10.215.4.67:5083/docmg/
+  #newPath: /home/628/
+  #pdfPath: http://10.215.4.67:5083/docmg/pdf/web/viewer.html
+
+
+logging:
+  level:
+    root: INFO
+    org.bigdata.framework.docmg.mapper: DEBUG
+    org.hibernate: ERROR
+  path: D:/logs/
+  file: admin.log
+
+# /home/628/logs/

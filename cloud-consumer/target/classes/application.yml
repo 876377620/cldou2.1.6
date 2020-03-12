@@ -1,0 +1,94 @@
+server:
+  port: 5083
+  tomcat:
+    uri-encoding: UTF-8
+
+  servlet:
+    context-path: /
+spring:
+  http:
+    encoding:
+      charset: utf-8
+
+      #location: /home/628/
+  application:
+    name: docmg-admin-consumer
+  resources:
+    static-locations: classpath:/resources/, classpath:/static/, classpath:/public/, file:${spring.http.multipart.location}
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 10000MB
+      max-request-size: 2048MB
+      file-size-threshold: 0
+      location: D:/file_save
+
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8761/eureka/
+
+
+#�Զ�������
+#myConfig:
+#  session-invalidate-time: 1800 #shiro sessionʧЧʱ�� ��λ����
+#  session-validation-interval: 900 #��ü��һ��ʧЧ��shiro session ��λ����
+#  batchType: 1 #0:ֻ�����Ϣ   1:�����Ϣ�Ҹ����ļ�
+#  importPath: e:/upload_file  #����
+#  exportPath: e:/upload_file/export/	#����
+#  pdfPath: e:/upload_file/pdfs/		#���ɵ�pdf
+#  thumbnailPath: e:/upload_file/thumbnail/	#���ɵ�����ͼ
+#  core: docmag	#solr core
+#  riskStartDate: 24/00/00 #���տ�ʼʱ��,(24��ʱ:ʱ/��/��)
+#  riskEndDate: 6/00/00 #���ս���ʱ��,(24��ʱ:ʱ/��/��)
+my-config:
+  session-invalidate-time: 1800 #shiro sessionʧЧʱ�� ��λ����
+  session-validation-interval: 900 #��ü��һ��ʧЧ��shiro session ��λ����
+  batchType: 1 #0:ֻ�����Ϣ   1:�����Ϣ�Ҹ����ļ�
+  #importPath: /home/628/  #����
+  #exportPath: /home/628/export/	#����
+  #pdfPath: /home/628/pdfs/		#���ɵ�pdf
+  #thumbnailPath: /home/628/thumbnail/	#���ɵ�����ͼ
+  core: docmag	#solr core
+  riskStartDate: 24/00/00 #���տ�ʼʱ��,(24��ʱ:ʱ/��/��)
+  riskEndDate: 6/00/00 #���ս���ʱ��,(24��ʱ:ʱ/��/��)
+  ftpIp: 10.215.4.55
+  ftpPort: 21
+  ftpUsername: yanzi
+  ftpPassword: yanzi
+  ftpDisc: E:/
+  #ϵͳ����ԱID(�����ݿ�user�����ϵͳ����ԱID���Ӧ)
+  sysadmin-id: 1110362883709411329
+  #��ȫ���ܹ���ԱID(�����ݿ�user����İ�ȫ���ܹ���ԱID���Ӧ)
+  secadmin-id: 1110363201545379841
+  #��ȫ��ƹ���ԱID(�����ݿ�user����İ�ȫ��ƹ���ԱID���Ӧ)
+  auditadmin-id: 1110364145540603905
+  #��ͨ�û���ɫID(�����ݿ�role�������ͨ�û�ID���Ӧ)
+  ordinaryrole-id: 1112995669674565634
+  #�����û���ʼ������
+  password: 123456
+  #file:
+  #  path: http://10.215.4.148:8081/file_server/conver/
+  #  newPath: D://logs/conver/
+  #  pdfPath: http://10.215.4.148:8081/file_server/conver/pdf/web/viewer.html
+  #file:
+  #  path: http://10.1.0.12:5083/docmg/
+  #  newPath: e:/upload_file/
+  #  pdfPath: http://10.1.0.12:5083/docmg/pdf/web/viewer.html
+
+  #file:
+  #path: http://10.215.4.67:5083/docmg/
+  #newPath: /home/628/
+  #pdfPath: http://10.215.4.67:5083/docmg/pdf/web/viewer.html
+
+
+logging:
+  level:
+    root: INFO
+    org.bigdata.framework.docmg.mapper: DEBUG
+    org.hibernate: ERROR
+  path: D:/logs/
+  file: admin.log
+
+# /home/628/logs/
